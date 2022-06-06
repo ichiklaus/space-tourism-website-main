@@ -1,0 +1,25 @@
+:root {
+  --color-1: hsla(230, 35%, 7%, 1);
+  --color-2: hsla(231, 77%, 90%, 1);
+  --color-3: hsla(0, 0%, 100%, 1);
+  --bg-color-1: hsla(0, 0%, 59%, 0.1);
+  --bg-color-2: hsla(0,0%,59%,.35);
+  --bg-color-3: rgba(45, 46, 58, 0.99);
+  --bg-color-4: hsla(0, 0%, 100%, .2);
+
+  --bg-home-desktop: url("/src/assets/home/background-home-desktop.jpg");
+  --bg-home-tablet: url("/src/assets/home/background-home-tablet.jpg");
+  --bg-home-mobile: url("/src/assets/home/background-home-mobile.jpg");
+    
+  --bg-destination-desktop: url("/src/assets/destination/background-destination-desktop.jpg");
+  --bg-destination-tablet: url("/src/assets/destination/background-destination-tablet.jpg");
+  --bg-destination-mobile: url("/src/assets/destination/background-destination-mobile.jpg");
+
+  --bg-crew-desktop: url("/src/assets/crew/background-crew-desktop.jpg");
+  --bg-crew-tablet: url("/src/assets/crew/background-crew-tablet.jpg");
+  --bg-crew-mobile: url("/src/assets/crew/background-crew-mobile.jpg");
+
+  --bg-technology-desktop: url("/src/assets/technology/background-technology-desktop.jpg");
+  --bg-technology-tablet: url("/src/assets/technology/background-technology-tablet.jpg");
+  --bg-technology-mobile: url("/src/assets/technology/background-technology-mobile.jpg");
+}

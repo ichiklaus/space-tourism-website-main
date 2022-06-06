@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "framer-motion": "^6.3.5",
+    "normalize.css": "^8.0.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@parcel/config-default": "^2.6.0",
+    "@parcel/resolver-glob": "^2.6.0",
+    "parcel": "^2.6.0",
+    "process": "^0.11.10"
+  },
+  "name": "space-tourism-website-main",
+  "description": "![Design preview for the Space tourism website coding challenge](./preview.jpg)",
+  "version": "1.0.0",
+  "source": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel -p 1000",
+    "build": "parcel build"
+  },
+  "author": "Yeraldo Nicolás Moreira",
+  "license": "ISC"
+}

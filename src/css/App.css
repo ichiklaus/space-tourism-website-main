@@ -1,0 +1,26 @@
+.App {
+  display: grid;
+  /* grid-template-columns: 375px; */
+  grid-template-rows: 120px auto;
+  place-content: start center;
+  /* row-gap: 9.325rem; */
+}
+
+@media screen and (min-width: 1280px) {
+  .App {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    place-content: stretch stretch;
+    /* row-gap: 5rem; */
+  }
+}
+
+/*  Tablet */
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .App {
+    grid-template-columns: auto;
+    grid-template-rows: 150px auto;
+    place-content: stretch stretch;
+    /* row-gap: 2rem; */
+  }
+}

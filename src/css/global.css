@@ -1,0 +1,80 @@
+@import url("./utilities.css");
+@import url("./App.css");
+@import url("./variables.css");
+
+
+body {
+  min-height: 100vh;
+}
+
+body {
+  transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body.home,
+body.destination,
+body.crew,
+body.technology {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: var(--color-1);
+}
+
+@media screen and (min-width: 1280px) {
+  :root body.home {
+    background-image: var(--bg-home-desktop);
+  }
+
+  :root body.destination {
+    background-image: var(--bg-destination-desktop);
+  }
+
+  :root body.crew {
+    background-image: var(--bg-crew-desktop);
+  }
+
+  :root body.technology {
+    background-image: var(--bg-technology-desktop);
+  }
+}
+
+/*  Tablet */
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  :root body.home {
+    background-image: var(--bg-home-tablet);
+  }
+
+  :root body.destination {
+    background-image: var(--bg-destination-tablet);
+  }
+
+  :root body.crew {
+    background-image: var(--bg-crew-tablet);
+  }
+
+  :root body.technology {
+    background-image: var(--bg-technology-tablet);
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: 767px) {
+  :root body.home {
+    background-image: var(--bg-home-mobile);
+  }
+
+  :root body.destination {
+    background-image: var(--bg-destination-mobile);
+  }
+
+  :root body.crew {
+    background-image: var(--bg-crew-mobile);
+  }
+
+  :root body.technology {
+    background-image: var(--bg-technology-mobile);
+  }
+}

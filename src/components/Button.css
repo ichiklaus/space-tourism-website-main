@@ -1,0 +1,15 @@
+.button {
+  border: none ;
+}
+
+.button__destination-page {
+  background-color: transparent;
+
+}
+
+.button__destination-page:hover::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid white;
+  margin-top: 14px;
+}

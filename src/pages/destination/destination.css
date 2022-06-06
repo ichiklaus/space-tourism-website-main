@@ -1,0 +1,137 @@
+.destination-grid-container {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+.destination-content {
+  margin-top: 1.75rem !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.destination-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
+}
+
+.destination-left {
+  grid-column: 2 / span 4;
+}
+
+.destination-right {
+  grid-column: 1 / span 6;
+  text-align: center;
+}
+
+.destination-image {
+  width: 100%;
+  max-width: 27.813rem;
+  height: auto;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.625rem;
+}
+
+.destination-stats {
+  display: flex;
+  flex-flow: column wrap;
+  column-gap: 4.938rem;
+  justify-content: center;
+}
+
+
+@media screen and (min-width: 1280px) {
+  .destination-grid-container {
+    justify-content: flex-start;
+    row-gap: 3rem;
+    position: relative;
+    top: 10vh;
+  }
+
+  .destination-container {
+    grid-template-columns: repeat(auto-fill, 80px);
+    column-gap: 1.975rem;
+  }
+
+  .destination-title {
+    margin-left: 10rem;
+  }
+
+  .destination-left {
+    grid-column: 3 / span 4;
+  }
+
+  .destination-right {
+    grid-column: 8 / span 5;
+    text-align: left;
+  }
+
+  .buttons-container {
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 35px;
+    margin-top: 0;
+  }
+
+  .destination-content {
+    display: flex;
+    flex-flow: column wrap;
+    padding-left: 1rem;
+    padding-right: 4rem;
+  }
+
+  .destination-stats {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .destination-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+    column-gap: 1.875rem;
+    row-gap: 3.5rem;
+  }
+
+  .buttons-container {
+    height: 34px;
+    column-gap: 2.5rem;
+    margin-bottom: 3rem;
+    margin-top: 0;
+  }
+
+  .destination-content {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .destination-title {
+    margin-left: 2.46rem;
+    margin-bottom: 4vh;
+  }
+
+  .destination-left {
+    grid-column: 3 / span 6;
+    align-self: center;
+  }
+
+  .destination-right {
+    grid-column: 2 / span 8;
+    text-align: center;
+  }
+
+  .destination-stats {
+    flex-flow: row wrap;
+  }
+}
