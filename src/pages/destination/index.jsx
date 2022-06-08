@@ -3,20 +3,19 @@ import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../../components/Button';
 
-import './destination.css';
 import destinationsWebp from '../../assets/destination/*.webp';
 
 function Destination({ setLocation, destinations }) {
-  const [activeContent, setActiveContent] = useState(0);
+  const [activeContent, setActiveContent] = useState('0');
   const location = useLocation();
   useEffect(() => {
     setLocation(location.pathname);
     // console.log(Object.keys(destinations).length);
   }, []);
-  console.log(activeContent);
+
   return (
-    <div className="destination-grid-container">
-      <h1 className="font-barlowCondensed text-28 mobile:text-16 destination-title">
+    <div className="container">
+      <h1 className="font-barlowCondensed text-28 mobile:text-16 section-title">
         <span className="text-slate f-700">01 </span>
         <span className="text-upper text-white f-400">
           Pick your destination
@@ -24,10 +23,11 @@ function Destination({ setLocation, destinations }) {
       </h1>
       {/* Container for destination information */}
       <AnimatePresence exitBeforeEnter>
-        <div id="" className="destination-container">
-          {/* START Title and picture */}
-          <div className="destination-left">
+        <div id="" className="section-grid-container">
+          {/* START of picture */}
+          <div className="section-picture">
             <motion.div
+              className="section-image-fixed"
               key={activeContent}
               initial={{ opacity: 0, scale: 0.4 }}
               exit={{ opacity: 0, transition: { duration: 1 } }}
@@ -39,8 +39,8 @@ function Destination({ setLocation, destinations }) {
               }}
             >
               <motion.div
-                animate={{ rotate: "360deg" }}
-                transition={{ repeat: "Infinity", duration: 60 }}
+                animate={{ rotate: '360deg' }}
+                transition={{ repeat: 'Infinity', duration: 60 }}
               >
                 {Object.entries(destinationsWebp)
                   .filter(
@@ -51,26 +51,28 @@ function Destination({ setLocation, destinations }) {
                     <img
                       src={imageUrl}
                       alt={imageName}
-                      className="destination-image"
+                      className="section-image"
                     />
                   ))}
               </motion.div>
             </motion.div>
           </div>
-          {/* END Title and picture */}
+          {/* END of picture */}
           {/* START Navigation and Content */}
-          <div id="" className="destination-right">
+          <div id="" className="section-content">
             <div className="buttons-container">
               {Object.entries(destinations).map(([key, value]) => (
                 <Button
                   keys={key}
                   value={value}
-                  style="button button__destination-page barlowCondensed nav-text mobile:text-14 text-slate text-upper"
+                  style={`button button__destination-page
+                  ${activeContent === key && 'active'}
+                  barlowCondensed nav-text mobile:text-14 text-slate text-upper`}
                   setActiveContent={setActiveContent}
                 />
               ))}
             </div>
-            <div className="destination-content margin-t-1">
+            <div className="section-info destination margin-t-1">
               <h2 className="font-bellefair text-white text-100 mobile:text-56 text-upper f-400 margin-y-.5">
                 {destinations[activeContent].name}
               </h2>

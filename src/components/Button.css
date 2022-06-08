@@ -1,15 +1,43 @@
 .button {
-  border: none ;
+  border: none;
 }
 
 .button__destination-page {
   background-color: transparent;
-
 }
 
-.button__destination-page:hover::after {
+.button__destination-page:hover::after,
+.button__destination-page.active::after {
   content: "";
   display: block;
   border-bottom: 3px solid white;
   margin-top: 14px;
+}
+
+.button__crew {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: #35373F;
+}
+
+.button__crew:hover,
+.button__crew.active {
+  transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+}
+
+.button__crew:hover {
+  background-color: hsl(230, 3%, 53%);
+}
+
+.button__crew.active {
+  background-color: hsl(100, 100%, 100%);
 }

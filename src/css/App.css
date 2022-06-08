@@ -1,26 +1,242 @@
 .App {
   display: grid;
-  /* grid-template-columns: 375px; */
   grid-template-rows: 120px auto;
   place-content: start center;
-  /* row-gap: 9.325rem; */
 }
+
+/* 
+ * LAYOUT FOR PAGES
+ * MAKE IT A GRID SYSTEM FOR PAGES
+*/
+.container {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+.section-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+}
+
+.section-picture {
+  grid-column: 3 / span 5;
+}
+
+.section-content {
+  grid-column: 2 / span 7;
+  text-align: center;
+}
+
+.section-content.crew {
+  order: 2;
+  display: grid;
+}
+
+.section-picture.crew {
+  order: 1;
+}
+
+.section-info.crew {
+  order: 2;
+  margin-top: 0;
+}
+
+.section-image {
+  width: 100%;
+  max-width: 25.3rem;
+  height: auto;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.625rem;
+  column-gap: 1rem;
+}
+
+.buttons-container.crew {
+  order: 1;
+
+}
+
+.section-info {
+  margin-top: 1.75rem;
+}
+
+.section-info.destination {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.destination-stats {
+  display: flex;
+  flex-flow: column wrap;
+  column-gap: 4.938rem;
+  justify-content: center;
+}
+
 
 @media screen and (min-width: 1280px) {
   .App {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
     place-content: stretch stretch;
-    /* row-gap: 5rem; */
+  }
+
+  .container {
+    justify-content: flex-start;
+    row-gap: 3rem;
+    position: relative;
+    top: 10vh;
+  }
+
+  .section-grid-container {
+    grid-template-columns: repeat(auto-fill, 80px);
+    column-gap: 1.975rem;
+  }
+
+  .section-title {
+    margin-left: 10rem;
+  }
+
+  .section-picture {
+    grid-column: 3 / span 4;
+  }
+
+  .section-picture.crew {
+    grid-column: 8 / span 4;
+  }
+
+  .section-image-fixed {
+    position: fixed;
+  }
+
+  .section-image-fixed.crew {
+    top: 12.875rem;
+    right: 6em;
+  }
+
+  .section-image.crew {
+    max-width: 90%;
+  }
+
+  .section-content {
+    grid-column: 8 / span 5;
+    text-align: left;
+  }
+
+  .section-content.crew {
+    grid-column: 2 / span 7;
+    margin-left: 3rem;
+    text-align: left;
+    height: 54.205607476635514vh;
+  }
+
+  .section-bio.crew {
+    max-width: 65%;
+  }
+
+  .buttons-container {
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 35px;
+    margin-top: 0;
+  }
+
+  .buttons-container.crew {
+    position: absolute;
+    bottom: -2rem;
+  }
+
+  .section-info {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .section-info.destination {
+    padding-left: 1rem;
+    padding-right: 4rem;
+  }
+
+  .destination-stats {
+    flex-flow: row wrap;
+    justify-content: flex-start;
   }
 }
 
-/*  Tablet */
+
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .App {
     grid-template-columns: auto;
     grid-template-rows: 150px auto;
     place-content: stretch stretch;
-    /* row-gap: 2rem; */
+  }
+
+  .container {
+    justify-content: flex-start;
+  }
+
+  .section-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+    column-gap: 1.875rem;
+    row-gap: 3.5rem;
+  }
+
+  .buttons-container {
+    height: 34px;
+    column-gap: 2.5rem;
+    margin-bottom: 3rem;
+    /* margin-top: 0; */
+  }
+
+  .section-info {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .section-info.crew {
+    order: 1;
+    margin-top: 0;
+  }
+
+  .section-title {
+    margin-left: 2.46rem;
+    margin-bottom: 4vh;
+  }
+
+  .section-picture {
+    grid-column: 3 / span 6;
+    align-self: center;
+  }
+
+  .section-image-fixed {
+    position: static;
+  }
+
+  .section-content {
+    grid-column: 2 / span 8;
+    text-align: center;
+  }
+
+  .section-content.crew {
+    height: auto;
+    order: 1;
+  }
+
+  .section-bio.crew {
+    padding: 0 2rem;
+    word-wrap: break-all;
+    /* height: 104px; */
+  }
+
+  .destination-stats {
+    flex-flow: row wrap;
   }
 }

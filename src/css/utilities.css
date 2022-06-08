@@ -118,7 +118,7 @@ p {
 }
 
 .text-p {
-  font-size: 1.15rem;
+  font-size: 1.125rem;
   line-height: 2rem;
 }
 
@@ -392,6 +392,10 @@ p {
 /* END margin-x */
 
 /* START margin-y */
+.margin-y-0 {
+  margin: .5rem 0;
+}
+
 .margin-y-\.5 {
   margin: .5rem 0;
 }
@@ -435,6 +439,10 @@ p {
 /* END margin-y */
 
 /* START margin-top */
+.margin-t-0 {
+  margin-top: .5rem;
+}
+
 .margin-t-\.5 {
   margin-top: .5rem;
 }
@@ -564,10 +572,16 @@ p {
   .mobile\:text-80 {
     font-size: 5rem !important;
     letter-spacing: 1 !important;
-  }  
+  }
+
   .mobile\:text-56 {
     font-size: 3.5rem !important;
     letter-spacing: 1 !important;
+  }
+
+  .mobile\:text-24 {
+    font-size: 1.5rem !important;
+    line-height: 1.85rem !important;
   }
 
   .mobile\:text-20 {
@@ -578,7 +592,7 @@ p {
   .mobile\:text-28 {
     font-size: 1.75rem !important;
     line-height: 2.15rem !important;
-  letter-spacing: 0.16964285714285715em !important;
+    letter-spacing: 0.16964285714285715em !important;
   }
 
   .mobile\:text-16 {
@@ -594,5 +608,12 @@ p {
   .mobile\:text-14 {
     font-size: 0.875rem !important;
     line-height: 1.15rem !important;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .tablet\:text-16 {
+    font-size: 1rem !important;
   }
 }
