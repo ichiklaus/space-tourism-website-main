@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import Button from '../../components/Button';
+import Button from '../components/Button';
 
-import crewImagesWebp from '../../assets/crew/*.png';
+import crewImagesWebp from '../assets/crew/*.webp';
 
 function Crew({ setLocation, crew }) {
-  const [activeContent, setActiveContent] = useState("0");
+  const [activeContent, setActiveContent] = useState('0');
   const location = useLocation();
   useEffect(() => setLocation(location.pathname), []);
 
   return (
     <div className="container">
       <h1 className="font-barlowCondensed text-28 mobile:text-16 section-title">
-        <span className="text-slate f-700">02 </span>
+        <span className="text-slate-2 f-700">02 </span>
         <span className="text-upper text-white f-400">Meet your crew</span>
       </h1>
       {/* Container for crew information */}
       <AnimatePresence exitBeforeEnter>
         <div className="section-grid-container">
+          {/* Start of Content section */}
           <div className="section-content crew">
-            {/* START of Content */}
             <div className="section-info crew margin-t-1">
               <h2 className="font-bellefair f-400 text-upper flex flex-col gap-y-1.5">
                 <span className="text-slate text-32 tablet:text-24 mobile:text-16">
@@ -38,10 +38,9 @@ function Crew({ setLocation, crew }) {
             {/* START of Navigation */}
             <div className="buttons-container crew margin-t-4">
               {Object.entries(crew).map(([key]) => (
-                // console.log(key, activeContent)
                 <Button
                   keys={key}
-                  value={key}
+                  value={key.name}
                   style={`button button__crew 
                   ${activeContent === key && 'active'}
                   barlowCondensed nav-text mobile:text-14 text-slate text-upper`}
@@ -62,13 +61,13 @@ function Crew({ setLocation, crew }) {
             >
               {Object.entries(crewImagesWebp)
                 .filter(
-                  ([imageName]) => imageName === crew[activeContent].images.png,
+                  ([imageName]) => imageName === crew[activeContent].images.webp,
                 )
                 .map(([imageName, imageUrl]) => (
                   <div className="section-image-fixed crew">
                     <img
                       src={imageUrl}
-                      alt={imageName}
+                      alt={crew[activeContent].name}
                       className="section-image crew"
                     />
                   </div>

@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import Button from '../../components/Button';
+import Button from '../components/Button';
 
-import destinationsWebp from '../../assets/destination/*.webp';
+import destinationsWebp from '../assets/destination/*.webp';
 
 function Destination({ setLocation, destinations }) {
   const [activeContent, setActiveContent] = useState('0');
   const location = useLocation();
   useEffect(() => {
     setLocation(location.pathname);
-    // console.log(Object.keys(destinations).length);
   }, []);
 
   return (
     <div className="container">
       <h1 className="font-barlowCondensed text-28 mobile:text-16 section-title">
-        <span className="text-slate f-700">01 </span>
+        <span className="text-slate-2 f-700">01 </span>
         <span className="text-upper text-white f-400">
           Pick your destination
         </span>
@@ -24,7 +23,7 @@ function Destination({ setLocation, destinations }) {
       {/* Container for destination information */}
       <AnimatePresence exitBeforeEnter>
         <div id="" className="section-grid-container">
-          {/* START of picture */}
+          {/* Start of Picture section */}
           <div className="section-picture">
             <motion.div
               className="section-image-fixed"
@@ -50,7 +49,7 @@ function Destination({ setLocation, destinations }) {
                   .map(([imageName, imageUrl]) => (
                     <img
                       src={imageUrl}
-                      alt={imageName}
+                      alt={destinations[activeContent].name}
                       className="section-image"
                     />
                   ))}
@@ -59,13 +58,13 @@ function Destination({ setLocation, destinations }) {
           </div>
           {/* END of picture */}
           {/* START Navigation and Content */}
-          <div id="" className="section-content">
-            <div className="buttons-container">
+          <div id="" className="section-content destination">
+            <div className="buttons-container destination">
               {Object.entries(destinations).map(([key, value]) => (
                 <Button
                   keys={key}
-                  value={value}
-                  style={`button button__destination-page
+                  value={value.name}
+                  style={`button button__destination
                   ${activeContent === key && 'active'}
                   barlowCondensed nav-text mobile:text-14 text-slate text-upper`}
                   setActiveContent={setActiveContent}

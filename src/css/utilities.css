@@ -82,6 +82,10 @@ p {
   color: var(--color-2);
 }
 
+.text-slate-2 {
+  color: var(--color-5);
+}
+
 .text-white {
   color: var(--color-3);
 }
@@ -548,26 +552,6 @@ p {
   border: 1px solid white;
 }
 
-.bg-color-1 {
-  background-color: var(--bg-color-2);
-}
-
-@supports ((backdrop-filter: blur(41.75px))) {
-  .bg-color-1 {
-    background: var(--bg-color-1);
-    backdrop-filter: blur(41.75px);
-    -webkit-backdrop-filter: blur(41.75px);
-  }
-}
-
-.bg-color-2 {
-  background-color: var(--bg-color-2);
-}
-
-.bg-color-3 {
-  background-color: var(--bg-color-3);
-}
-
 @media screen and (min-width: 0px) and (max-width: 767px) {
   .mobile\:text-80 {
     font-size: 5rem !important;
@@ -610,7 +594,6 @@ p {
     line-height: 1.15rem !important;
   }
 }
-
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .tablet\:text-16 {

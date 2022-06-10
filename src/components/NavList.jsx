@@ -36,15 +36,11 @@ export default function NavList() {
   };
 
   return (
-    <nav
-      className={`${
-        hamburgerOpen ? `transition-in bg-color-1` : `transition-out bg-color-1`
-      } navlist`}
-    >
+    <nav>
       <ul
         className={`${
-          hamburgerOpen ? 'visible' : 'hidden'
-        } flex flex-row gap-x-3 padding-l-7`}
+          hamburgerOpen ? 'transition-in visible ul-menu' : 'hidden'
+        } flex flex-row gap-x-3 padding-l-7 ul-menu bg-color-1 navlist`}
       >
         <li>
           <NavLink className="font-barlowCondensed nav-text text-white" to="/">
@@ -94,7 +90,7 @@ export default function NavList() {
           </NavLink>
         </li>
       </ul>
-      <div className="hamb" onClick={toggleHamburger}>
+      <div className="hamburger-wrapper" onClick={toggleHamburger}>
         <Hamburger isOpen={hamburgerOpen} />
       </div>
     </nav>

@@ -9,7 +9,7 @@ function Button({ keys, value, style, setActiveContent}) {
         className={`${style}`}
         onClick={useCallback(() => setActiveContent(keys), [keys])}
       >
-        {value.name}
+        {value}
       </button>
     </div>
   );

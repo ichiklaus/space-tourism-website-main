@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import './homepage.css';
-
 export default function Homepage({ setLocation }) {
   const location = useLocation();
   useEffect(() => setLocation(location.pathname), [])
@@ -23,7 +21,7 @@ export default function Homepage({ setLocation }) {
         <div className='homepage '>
           <div className='content'>
             <h1 className='flex flex-col flex-initial'>
-              <span className="font-barlowCondensed f-100 text-upper text-28 mobile:text-16 text-slate margin-b-2">
+              <span className="font-barlowCondensed f-100 text-upper text-28 mobile:text-16 text-slate ">
                 So, you want to travel to
               </span>
               <span className="font-bellefair f-100 text-upper text-150 mobile:text-80 text-white">Space</span>

@@ -3,9 +3,9 @@
 @import url("./variables.css");
 
 
-body {
+/* body {
   min-height: 100vh;
-}
+} */
 
 body {
   transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -20,7 +20,7 @@ body.destination,
 body.crew,
 body.technology {
   background-repeat: no-repeat;
-  background-size: 100% 100vh;
+  background-size: 100% 100%;
   background-color: var(--color-1);
 }
 
@@ -72,11 +72,20 @@ body.technology {
 
   :root body.crew {
     background-image: var(--bg-crew-mobile);
-    backdrop-filter: blur(5px);
-
-  }
+}
 
   :root body.technology {
     background-image: var(--bg-technology-mobile);
+  }
+}
+
+.bg-color-1 {
+  background: var(--bg-color-3);
+}
+
+@supports ((backdrop-filter: blur(41.75px))) {
+  .bg-color-1 {
+    background: var(--bg-color-1);
+    backdrop-filter: blur(41.75px);
   }
 }

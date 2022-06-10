@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-import { Homepage, Destination, Crew, Technology } from '../../pages';
+import { Homepage, Destination, Crew, Technology } from '../pages';
 
 function Main({ data: { destinations, crew, technology } }) {
   const [location, setLocation] = useState('');

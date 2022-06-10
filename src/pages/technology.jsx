@@ -1,0 +1,91 @@
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import Button from '../components/Button';
+
+import technologyImages from '../assets/technology/*.jpg';
+
+function Technology({ setLocation, technology }) {
+  const [activeContent, setActiveContent] = useState('0');
+  const location = useLocation();
+  useEffect(() => setLocation(location.pathname), []);
+
+  let portraitImagesArr = [];
+  let landscapeImagesArr = [];
+
+  Object.entries(technologyImages)
+    .filter(
+      ([imageName]) => imageName === technology[activeContent].images.portrait,
+    )
+    .map(([name, url]) => (portraitImagesArr = [name, url]));
+
+  Object.entries(technologyImages)
+    .filter(
+      ([imageName]) => imageName === technology[activeContent].images.landscape,
+    )
+    .map(([name, url]) => (landscapeImagesArr = [name, url]));
+
+  return (
+    <div className="container">
+      <h1 className="font-barlowCondensed text-upper text-28 mobile:text-16 section-title">
+        <span className="text-slate-2 f-700">03 </span>
+        <span className="text-white f-400">space launch 101</span>
+      </h1>
+      {/* Container for technology information */}
+      <AnimatePresence>
+        <div className="section-grid-container">
+          {/* Start of Content section */}
+          <div className="section-content technology">
+            {/* Start of Navigation section */}
+            <div className="buttons-container technology">
+              {Object.entries(technology).map(([key]) => (
+                // console.log(typeof Number(key))
+                <Button
+                  keys={key}
+                  value={Number(key) + 1}
+                  style={`button ${activeContent === key && 'active'} button__technology`}
+                  setActiveContent={setActiveContent}
+                />
+              ))}
+            </div>
+            {/* Start of Info section */}
+            <div className="section-info technology margin-t-1">
+              <h2 className="f-400 text-upper flex flex-col">
+                <span className="font-barlowCondensed nav-text text-slate margin-b-1">
+                  the terminology
+                </span>
+                <span className="font-bellefair text-56 text-white">
+                  {technology[activeContent].name}
+                  {/* {console.log(technology[activeContent].name)} */}
+                </span>
+              </h2>
+              <p className="font-barlow text-slate mobile:text-15 text-p">
+                {technology[activeContent].description}
+              </p>
+            </div>
+          </div>
+
+          <div className="section-picture technology">
+            <motion.div>
+              <div className="section-image-relative ">
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcSet={portraitImagesArr[1]}
+                  />
+                  <img
+                    src={landscapeImagesArr[1]}
+                    alt={technology[activeContent].name}
+                    className="section-image technology"
+                  />
+                </picture>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </AnimatePresence>
+    </div>
+  );
+}
+
+export default Technology;

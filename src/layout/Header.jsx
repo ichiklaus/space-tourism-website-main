@@ -1,14 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import NavList from '../../components/NavList';
-import './Header.css'
+import NavList from '../components/NavList';
 
 function Header() {
   return (
-    <header>
-      <motion.div
-      className='header'
+    <header className="header">
+      {/* <motion.div
+      className=''
       initial="hidden"
       animate="visible"
       variants={{
@@ -21,9 +20,9 @@ function Header() {
         type: 'tween',
         stiffness: 200,
       }}
-      >
+      > */}
       <NavList />
-      </motion.div>
+      {/* </motion.div> */}
     </header>
   );
 }
