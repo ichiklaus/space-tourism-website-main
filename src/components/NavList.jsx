@@ -36,7 +36,7 @@ export default function NavList() {
   };
 
   return (
-    <nav>
+    <nav className='navlist-decoration'>
       <ul
         className={`${
           hamburgerOpen ? 'transition-in visible ul-menu' : 'hidden'

@@ -32,7 +32,7 @@ function Technology({ setLocation, technology }) {
         <span className="text-white f-400">space launch 101</span>
       </h1>
       {/* Container for technology information */}
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <div className="section-grid-container">
           {/* Start of Content section */}
           <div className="section-content technology">
@@ -43,7 +43,7 @@ function Technology({ setLocation, technology }) {
                 <Button
                   keys={key}
                   value={Number(key) + 1}
-                  style={`button ${activeContent === key && 'active'} button__technology`}
+                  style={`button ${activeContent === key && 'active'} button__technology text-32`}
                   setActiveContent={setActiveContent}
                 />
               ))}
@@ -59,14 +59,20 @@ function Technology({ setLocation, technology }) {
                   {/* {console.log(technology[activeContent].name)} */}
                 </span>
               </h2>
-              <p className="font-barlow text-slate mobile:text-15 text-p">
+              <p className="section-info-description technology font-barlow text-slate text-p">
                 {technology[activeContent].description}
               </p>
             </div>
           </div>
 
           <div className="section-picture technology">
-            <motion.div>
+            <motion.div
+              key={activeContent}
+              initial={{ opacity: 0 }}
+              exit={{ opacity: 0, transition: { duration: 0.8 } }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, type: "tween", stiffness: 100 }}
+            >
               <div className="section-image-relative ">
                 <picture>
                   <source

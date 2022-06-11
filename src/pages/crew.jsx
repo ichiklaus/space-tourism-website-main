@@ -36,7 +36,7 @@ function Crew({ setLocation, crew }) {
             </div>
 
             {/* START of Navigation */}
-            <div className="buttons-container crew margin-t-4">
+            <div className="buttons-container crew ">
               {Object.entries(crew).map(([key]) => (
                 <Button
                   keys={key}
@@ -58,13 +58,15 @@ function Crew({ setLocation, crew }) {
               initial={{ opacity: 0 }}
               exit={{ opacity: 0, transition: { duration: 0.8 } }}
               animate={{ opacity: 1 }}
+              transition={{ duration: 1, type: "tween", stiffness: 100 }}
             >
               {Object.entries(crewImagesWebp)
                 .filter(
-                  ([imageName]) => imageName === crew[activeContent].images.webp,
+                  ([imageName]) =>
+                    imageName === crew[activeContent].images.webp,
                 )
                 .map(([imageName, imageUrl]) => (
-                  <div className="section-image-fixed crew">
+                  <div className="section-image-relative crew">
                     <img
                       src={imageUrl}
                       alt={crew[activeContent].name}

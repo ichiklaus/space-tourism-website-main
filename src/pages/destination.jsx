@@ -50,7 +50,7 @@ function Destination({ setLocation, destinations }) {
                     <img
                       src={imageUrl}
                       alt={destinations[activeContent].name}
-                      className="section-image"
+                      className="section-image destination"
                     />
                   ))}
               </motion.div>

@@ -26,7 +26,7 @@ export default function Homepage({ setLocation }) {
               </span>
               <span className="font-bellefair f-100 text-upper text-150 mobile:text-80 text-white">Space</span>
             </h1>
-            <p className='font-bellefair f-100 text-p text-slate flex-initial'>
+            <p className='font-barlow f-100 text-p text-slate flex-initial'>
               Let’s face it; if you want to go to space, you might as well genuinely
               go to outer space and not hover kind of on the edge of it. Well sit
               back, and relax because we’ll give you a truly out of this world

@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 
 import NavList from '../components/NavList';
 
+import logo from '../assets/shared/logo.svg'
+
 function Header() {
   return (
     <header className="header">
@@ -21,6 +23,7 @@ function Header() {
         stiffness: 200,
       }}
       > */}
+      <img className='logo' src={logo} alt="logo" />
       <NavList />
       {/* </motion.div> */}
     </header>

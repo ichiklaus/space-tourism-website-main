@@ -72,6 +72,9 @@ body.technology {
 
   :root body.crew {
     background-image: var(--bg-crew-mobile);
+  /* backdrop-filter: blur(1px); */
+  background-size: 100% 112%;
+  
 }
 
   :root body.technology {

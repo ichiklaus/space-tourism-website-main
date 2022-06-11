@@ -1,5 +1,6 @@
 .button {
   border: none;
+  cursor: pointer;
 }
 
 .button__destination {
@@ -22,14 +23,14 @@
 }
 
 .button__crew {
-  width: 15px;
-  height: 15px;
+  height: clamp(10px, 1vw, 15px);
+  width: clamp(10px, 1vw, 15px);
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  background-color: #35373F;
+  background-color: hsl(229, 11%, 31%);
 }
 
 .button__crew:hover {
