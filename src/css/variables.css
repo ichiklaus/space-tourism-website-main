@@ -6,8 +6,6 @@
   --color-5: hsla(0, 0%, 100%, 0.302);
 
   --bg-color-1: hsla(0, 0%, 59%, 0.1);
-  --bg-color-2: hsla(0, 0%, 59%, .35);
-  --bg-color-3: rgba(45, 46, 58, 0.99);
 
   --bg-home-desktop: url("/src/assets/home/background-home-desktop.jpg");
   --bg-home-tablet: url("/src/assets/home/background-home-tablet.jpg");

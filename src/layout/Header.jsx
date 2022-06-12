@@ -23,7 +23,7 @@ function Header() {
         stiffness: 200,
       }}
       > */}
-      <img className='logo' src={logo} alt="logo" />
+      <img className='header__logo' src={logo} alt="logo" />
       <NavList />
       {/* </motion.div> */}
     </header>

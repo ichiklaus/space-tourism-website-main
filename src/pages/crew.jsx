@@ -11,17 +11,17 @@ function Crew({ setLocation, crew }) {
   useEffect(() => setLocation(location.pathname), []);
 
   return (
-    <div className="container">
-      <h1 className="font-barlowCondensed text-28 mobile:text-16 section-title">
+    <div className="section__container-wrapper">
+      <h1 className="font-barlowCondensed text-28 mobile:text-16 section__title">
         <span className="text-slate-2 f-700">02 </span>
         <span className="text-upper text-white f-400">Meet your crew</span>
       </h1>
       {/* Container for crew information */}
       <AnimatePresence exitBeforeEnter>
-        <div className="section-grid-container">
+        <div className="section__content-wrapper">
           {/* Start of Content section */}
-          <div className="section-content crew">
-            <div className="section-info crew margin-t-1">
+          <div className="section__content section__content--crew">
+            <div className="section_info section__info--crew margin-t-1">
               <h2 className="font-bellefair f-400 text-upper flex flex-col gap-y-1.5">
                 <span className="text-slate text-32 tablet:text-24 mobile:text-16">
                   {crew[activeContent].role}
@@ -36,7 +36,7 @@ function Crew({ setLocation, crew }) {
             </div>
 
             {/* START of Navigation */}
-            <div className="buttons-container crew ">
+            <div className="buttons__container buttons__container--crew ">
               {Object.entries(crew).map(([key]) => (
                 <Button
                   keys={key}
@@ -52,7 +52,7 @@ function Crew({ setLocation, crew }) {
           </div>
           {/* END of Content */}
           {/* START of picture section */}
-          <div className="section-picture crew">
+          <div className="section__image-wrapper crew">
             <motion.div
               key={activeContent}
               initial={{ opacity: 0 }}
@@ -66,11 +66,11 @@ function Crew({ setLocation, crew }) {
                     imageName === crew[activeContent].images.webp,
                 )
                 .map(([imageName, imageUrl]) => (
-                  <div className="section-image-relative crew">
+                  <div className="section__image--relative crew">
                     <img
                       src={imageUrl}
                       alt={crew[activeContent].name}
-                      className="section-image crew"
+                      className="section__image--crew"
                     />
                   </div>
                 ))}

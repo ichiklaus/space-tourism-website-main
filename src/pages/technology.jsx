@@ -26,18 +26,18 @@ function Technology({ setLocation, technology }) {
     .map(([name, url]) => (landscapeImagesArr = [name, url]));
 
   return (
-    <div className="container">
-      <h1 className="font-barlowCondensed text-upper text-28 mobile:text-16 section-title">
+    <div className="section__container-wrapper">
+      <h1 className="font-barlowCondensed text-upper text-28 mobile:text-16 section__title">
         <span className="text-slate-2 f-700">03 </span>
         <span className="text-white f-400">space launch 101</span>
       </h1>
       {/* Container for technology information */}
       <AnimatePresence exitBeforeEnter>
-        <div className="section-grid-container">
+        <div className="section__content-wrapper">
           {/* Start of Content section */}
-          <div className="section-content technology">
+          <div className="section__content section__content--technology">
             {/* Start of Navigation section */}
-            <div className="buttons-container technology">
+            <div className="buttons__container buttons__container--technology">
               {Object.entries(technology).map(([key]) => (
                 // console.log(typeof Number(key))
                 <Button
@@ -49,7 +49,7 @@ function Technology({ setLocation, technology }) {
               ))}
             </div>
             {/* Start of Info section */}
-            <div className="section-info technology margin-t-1">
+            <div className="section__info section__info--technology margin-t-1">
               <h2 className="f-400 text-upper flex flex-col">
                 <span className="font-barlowCondensed nav-text text-slate margin-b-1">
                   the terminology
@@ -65,7 +65,7 @@ function Technology({ setLocation, technology }) {
             </div>
           </div>
 
-          <div className="section-picture technology">
+          <div className="section__image-wrapper technology">
             <motion.div
               key={activeContent}
               initial={{ opacity: 0 }}
@@ -73,7 +73,7 @@ function Technology({ setLocation, technology }) {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, type: "tween", stiffness: 100 }}
             >
-              <div className="section-image-relative ">
+              <div className="section__image--relative ">
                 <picture>
                   <source
                     media="(min-width: 1280px)"
@@ -82,7 +82,7 @@ function Technology({ setLocation, technology }) {
                   <img
                     src={landscapeImagesArr[1]}
                     alt={technology[activeContent].name}
-                    className="section-image technology"
+                    className="section__image--technology"
                   />
                 </picture>
               </div>

@@ -13,8 +13,8 @@ function Destination({ setLocation, destinations }) {
   }, []);
 
   return (
-    <div className="container">
-      <h1 className="font-barlowCondensed text-28 mobile:text-16 section-title">
+    <div className="section__container-wrapper">
+      <h1 className="font-barlowCondensed text-28 mobile:text-16 section__title">
         <span className="text-slate-2 f-700">01 </span>
         <span className="text-upper text-white f-400">
           Pick your destination
@@ -22,11 +22,11 @@ function Destination({ setLocation, destinations }) {
       </h1>
       {/* Container for destination information */}
       <AnimatePresence exitBeforeEnter>
-        <div id="" className="section-grid-container">
+        <div id="" className="section__content-wrapper">
           {/* Start of Picture section */}
-          <div className="section-picture">
+          <div className="section__image-wrapper">
             <motion.div
-              className="section-image-fixed"
+              className="section__image--position"
               key={activeContent}
               initial={{ opacity: 0, scale: 0.4 }}
               exit={{ opacity: 0, transition: { duration: 1 } }}
@@ -50,7 +50,7 @@ function Destination({ setLocation, destinations }) {
                     <img
                       src={imageUrl}
                       alt={destinations[activeContent].name}
-                      className="section-image destination"
+                      className="section__image--destination"
                     />
                   ))}
               </motion.div>
@@ -58,8 +58,8 @@ function Destination({ setLocation, destinations }) {
           </div>
           {/* END of picture */}
           {/* START Navigation and Content */}
-          <div id="" className="section-content destination">
-            <div className="buttons-container destination">
+          <div id="" className="section__content section__content--destination">
+            <div className="buttons__container buttons__container--destination">
               {Object.entries(destinations).map(([key, value]) => (
                 <Button
                   keys={key}
@@ -71,14 +71,14 @@ function Destination({ setLocation, destinations }) {
                 />
               ))}
             </div>
-            <div className="section-info destination margin-t-1">
+            <div className="section__info section__info--destination margin-t-1">
               <h2 className="font-bellefair text-white text-100 mobile:text-56 text-upper f-400 margin-y-.5">
                 {destinations[activeContent].name}
               </h2>
               <p className="font-barlow text-slate mobile:text-15 text-p">
                 {destinations[activeContent].description}
               </p>
-              <div className="destination-stats">
+              <div className="destination__stats">
                 <p className="text-upper flex flex-col">
                   <span className="text-slate font-barlowCondensed subheading-2">
                     avg. distance

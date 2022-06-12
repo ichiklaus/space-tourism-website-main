@@ -1,23 +1,28 @@
 @media screen and (min-width: 1280px) {
   .navlist {
-    width: 51.875rem;
+    width: 49.62643678160919vw;
     padding: 2.5rem 0;
+    align-items: center;
+  }
+
+  .navlist-decoration {
+    display: flex;
+    align-items: center;
   }
 
   .navlist-decoration::before {
     content: "";
-    border: 0.5px solid hsl(0, 0%, 59%);
+    border-bottom: 1px solid hsl(0, 0%, 59%);
     opacity: 0.3;
     width: 29.563rem;
     height: 1px;
-    position: absolute;
-    transform: translate(-90%, 3250%);
-    -webkit-transform: translate(-90%, 3250%);
-    -moz-transform: translate(-90%, 3250%);
-    -ms-transform: translate(-90%, 3250%);
-    -o-transform: translate(-90%, 3250%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     z-index: 1000;
-  }
+    left: 5rem;   
+}
 
   #home::before {
     content: "00";

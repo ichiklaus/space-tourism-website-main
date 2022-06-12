@@ -18,9 +18,9 @@ export default function Homepage({ setLocation }) {
           duration: 2,
         }}
       >
-        <div className='homepage '>
-          <div className='content'>
-            <h1 className='flex flex-col flex-initial'>
+        <div className='homepage'>
+          <div className='homepage__content'>
+            <h1 className='flex flex-col'>
               <span className="font-barlowCondensed f-100 text-upper text-28 mobile:text-16 text-slate ">
                 So, you want to travel to
               </span>
@@ -33,9 +33,9 @@ export default function Homepage({ setLocation }) {
               experience!
             </p>
           </div>
-        <div className='button__container'>
+        <div className='explore__button-container'>
           <motion.button
-            className='explore__button'
+            className='button__explore'
             whileTap={{ scale: 0.9 }}
             whileHover={{
               boxShadow: '0 0 0 40px hsla(0, 0%, 59%, 0.5)',
@@ -53,7 +53,7 @@ export default function Homepage({ setLocation }) {
               stiffness: 100,
             }}
           >
-            <span className="text-32 mobile:text-20 font-bellefair text-upper">Explore</span>
+            <span className="font-bellefair text-upper">Explore</span>
           </motion.button>
         </div>
     </div>

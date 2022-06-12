@@ -3,6 +3,25 @@
   cursor: pointer;
 }
 
+.button__explore {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: var(--color-3);
+  letter-spacing: 2px;
+  border: var(--color-3) solid none;
+  height: 150px;
+  width: 150px;
+  margin-bottom: 3rem;
+  font-size: clamp(1.25rem, 3.95vw, 2rem);
+}
+
+.button__explore:hover {
+  cursor: pointer;
+}
+
 .button__destination {
   background-color: transparent;
 }
@@ -74,4 +93,18 @@
   -moz-transition: all 200ms ease-in;
   -ms-transition: all 200ms ease-in;
   -o-transition: all 200ms ease-in;
+}
+
+@media screen and (min-width:1280px) {
+  .button__explore {
+    height: 274px;
+    width: 274px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .button__explore {
+    height: 242px;
+    width: 242px;
+  }
 }

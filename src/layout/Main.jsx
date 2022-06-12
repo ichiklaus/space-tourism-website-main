@@ -35,7 +35,7 @@ function Main({ data: { destinations, crew, technology } }) {
 
   return (
     <AnimatePresence>
-      <main className="">
+      <main>
         <Routes>
           <Route path="/" element={<Homepage setLocation={setLocation} />} />
           <Route
